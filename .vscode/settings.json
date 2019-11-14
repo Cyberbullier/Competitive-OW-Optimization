@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/Users/theyoungkai/.virtualenvs/overwatch_perfect_flex/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
