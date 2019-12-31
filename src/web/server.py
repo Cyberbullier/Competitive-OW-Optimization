@@ -20,7 +20,7 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 STATS_PER_PAGE = 10
 
 app = Flask(__name__)
-dev_db_url = 'postgresql://localhost/overwatch_counter_picker'
+dev_db_url = 'postgresql://localhost/overwatch_perfect_flex'
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', dev_db_url)
 app.config['UPLOAD_FOLDER'] = os.path.abspath('src/web/uploads')
 
