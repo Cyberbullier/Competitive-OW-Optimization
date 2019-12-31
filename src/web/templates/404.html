@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}404 Not Found - {% endblock %}
+{% block back_text %}&larr; {% endblock %}
+{% block header %}
+  <a class="stats-link is-pulled-right" href="/stats">
+    View stats
+  </a>
+{% endblock %}
+{% block page_title %}/ <span class="page-title">404 Not Found</span>{% endblock %}
+{% block content %}
+  <div class="container has-text-centered content">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <h1>404 Not Found</h1>
+        <p>Sorry, that URL doesn't seem to be valid.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,6 +1,6 @@
 import operator
 
-import Roles
+from src.models.roles import Roles
 
 class HeroPicker:
   # If there's an X, go one of Y
@@ -33,27 +33,19 @@ class HeroPicker:
   # If you have X on your team, one of Y would pair well
   synergies = {
     'ana': [],
-    'ashe':[],
     'bastion': ['reinhardt', 'mercy'],
-    'baptiste'[],
-    'brigitte'[],
-    'doomfist':[],
     'dva': ['mercy', 'ana'],
     'genji': ['lucio'],
-    'hammond':[],
     'hanzo': [],
     'junkrat': [],
     'lucio': [],
     'mccree': ['lucio'],
     'mei': ['roadhog'],
     'mercy': ['zarya', 'pharah', 'dva'],
-    'moira':[]
-    'orisa':[],
     'pharah': ['mercy'],
     'reaper': [],
     'reinhardt': [],
     'roadhog': ['mei'],
-    'sigma':[],
     'soldier76': ['mercy'],
     'sombra': [],
     'symmetra': ['torbjorn'],

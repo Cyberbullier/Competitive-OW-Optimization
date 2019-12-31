@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}Overwatch Perfect Flex</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
+  {% block css %}{% endblock %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="index-page">
+  <header class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        {% block header %}{% endblock %}
+        <h1 class="title">
+          <a href="/">{% block back_text %}{% endblock %}SungwonEsports club OWL character optimizer</a> {% block page_title %}{% endblock %}
+        </h1>
+        <p class="subtitle">
+          Upload Scshot
+        </p>
+      </div>
+    </div>
+  </header>
+  <section class="section">
+    {% block content %}{% endblock %}
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <ul class="list-inline">
+          <li>
+            <span class="octicon octicon-heart"></span>
+            Built by Richard Topaloglu
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  {% block script %}{% endblock %}
+</body>
+</html>

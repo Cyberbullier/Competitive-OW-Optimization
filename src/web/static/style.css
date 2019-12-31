@@ -1,0 +1,307 @@
+.overwatch-hero {
+  border-width: 1px;
+  border-style: solid;
+  padding: 15px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.overwatch-hero.pick {
+  border-color: #c5fd36;
+}
+
+.overwatch-hero.enemy {
+  border-color: #ed1228;
+}
+
+.overwatch-hero.ally {
+  border-color: #43c0f9;
+}
+
+.allies-list .overwatch-hero.player {
+  background-color: #fbfbfb;
+  border-color: #ddd;
+}
+
+.overwatch-hero-portrait {
+  display: block;
+}
+
+.overwatch-hero.pick .overwatch-hero-portrait {
+  width: 180px;
+  height: 180px;
+}
+
+.overwatch-hero.enemy .overwatch-hero-portrait,
+.overwatch-hero.ally .overwatch-hero-portrait {
+  width: 100px;
+  height: 100px;
+}
+
+.player-choice-ok-container .overwatch-hero.player {
+  padding: 0;
+  border-color: #999;
+  border-radius: 2px;
+}
+
+.overwatch-hero.player .overwatch-hero-portrait {
+  width: 100px;
+  height: 100px;
+  border-radius: 2px;
+}
+
+.overwatch-hero-name .subtle {
+  display: block;
+  font-size: 90%;
+}
+
+.allies-container {
+
+}
+
+.picks-container {
+  position: relative;
+}
+
+.enemies-container {
+
+}
+
+.player-choice-ok-container .overwatch-hero {
+  margin-bottom: 1em;
+}
+
+.player-choice-ok-container .overwatch-hero.player,
+.player-choice-ok-container .instruction {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.player-choice-ok-container .instruction {
+  margin-left: 1em;
+  margin-top: 5px;
+}
+
+.list-inline li {
+  list-style: none;
+  display: inline-block;
+}
+
+.list-inline li + li {
+  margin-left: 1em;
+}
+
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input + .label {
+  color: #3273dc;
+  background-color: #eee;
+  border: 2px dashed #ddd;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.file-input + .label + .button {
+  border-left: 10px solid white;
+}
+
+.file-input + .label:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.file-input:focus + .label,
+.file-input + .label:hover,
+.file-input + .label.focus {
+  border-color: #3273dc;
+  background-color: #fff;
+}
+
+.file-input + .label * {
+  pointer-events: none;
+}
+
+.label.is-large {
+  font-size: 22px;
+  height: 48px;
+  line-height: 48px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.control.has-addons .label.is-expanded {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.upload-form {
+  margin-bottom: 5px;
+}
+
+.sample-screenshot-container {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.pick-stats-table td {
+  vertical-align: middle;
+}
+
+.pick-stats-table .overwatch-hero-portrait {
+  width: 52px;
+  height: 52px;
+  border-radius: 2px;
+  padding: 2px;
+  background-color: #ddd;
+}
+
+.pick-stats-table .player-cell {
+  width: 70px;
+  position: relative;
+}
+
+.pick-stats-table .overwatch-hero-portrait.player {
+}
+
+.pick-stats-table .overwatch-hero-portrait.blue-hero,
+.pick-stats-table .overwatch-hero-portrait.red-hero,
+.pick-stats-table .overwatch-hero-portrait.pick {
+  display: inline-block;
+}
+
+.pick-stats-table .overwatch-hero-portrait.blue-hero {
+  background-color: #6cbef6;
+}
+
+.octicon {
+  vertical-align: middle;
+}
+
+.pick-stats-table .date-cell {
+  white-space: nowrap;
+}
+
+.pick-stats-table .date-cell a,
+.pick-stats-table .date-cell a .octicon {
+  font-size: 12px;
+}
+
+.red-text {
+  color: #C13110;
+}
+
+.green-text {
+  color: #2AC110;
+}
+
+.content .upload-tips-list li {
+  list-style: none;
+}
+
+.content h1 {
+  line-height: 1.25;
+}
+
+.content .upload-tips-list li + li {
+  margin-top: 1em;
+}
+
+.upload-tips-list .sample-screenshot {
+  display: block;
+  margin-top: 1em;
+}
+
+.pick-stats-table .player-ok,
+.pick-stats-table .player-not-ok {
+  position: absolute;
+  left: 55px;
+  top: 44px;
+}
+
+.pick-stats-table .overwatch-hero-portrait.red-hero {
+  background-color: #eb6034;
+}
+
+.pick-stats-table .overwatch-hero-portrait.pick {
+  width: 35px;
+  height: 35px;
+}
+
+.pick-stats-table .suggestions-1 .overwatch-hero-portrait.pick,
+.pick-stats-table .suggestions-2 .overwatch-hero-portrait.pick,
+.pick-stats-table .suggestions-3 .overwatch-hero-portrait.pick,
+.pick-stats-table .suggestions-4 .overwatch-hero-portrait.pick,
+.pick-stats-table .suggestions-5 .overwatch-hero-portrait.pick,
+.pick-stats-table .suggestions-6 .overwatch-hero-portrait.pick {
+  width: 52px;
+  height: 52px;
+}
+
+.pick-stats-table .blue-team-cell,
+.pick-stats-table .red-team-cell {
+  max-width: 350px;
+}
+
+.stats-link {
+  color: #fff;
+}
+
+.stats-link:hover,
+.stats-link:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.subtle-links {
+  position: absolute;
+  right: 0;
+  font-size: 13px;
+  z-index: 1;
+}
+
+.subtle-links a {
+  display: inline-block;
+  border-bottom: 0;
+  color: #999;
+  padding-top: 14px;
+}
+
+.subtle-links a:hover,
+.subtle-links a:focus {
+  color: #333;
+}
+
+@media (min-width: 900px) {
+  .index-page .screenshot {
+    max-width: 800px;
+  }
+}
+
+.title .page-title {
+  color: #c9fbfa;
+  font-size: 90%;
+}
+
+.button.is-link {
+  text-decoration: none;
+}
+
+.button.is-link:focus,
+.button.is-link:hover {
+  text-decoration: underline;
+  background-color: transparent;
+}

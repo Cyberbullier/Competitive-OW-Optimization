@@ -1,29 +1,21 @@
-from roles import Roles
+from src.models.roles import Roles
 
 class Team:
   hero_names = {
     'ana': 'Ana',
-    'ashe': 'Ashe',
-    'baptiste': 'Baptiste',
     'bastion': 'Bastion',
-    'brigitte': 'Brigitte',
-    'doomfist': 'Doomfist',
     'dva': 'D.Va',
     'genji': 'Genji',
-    'hammond': 'Hammond',
     'hanzo': 'Hanzo',
     'junkrat': 'Junkrat',
     'lucio': 'Lucio',
     'mccree': 'McCree',
     'mei': 'Mei',
     'mercy': 'Mercy',
-    'moira': 'Moira',
-    'orisa': 'Orisa',
     'pharah': 'Pharah',
     'reaper': 'Reaper',
     'reinhardt': 'Reinhardt',
     'roadhog': 'Roadhog',
-    'sigma': 'Sigma',
     'soldier76': 'Soldier 76',
     'sombra': 'Sombra',
     'symmetra': 'Symmetra',

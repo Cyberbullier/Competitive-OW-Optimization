@@ -1,14 +1,14 @@
 import cv2
 import os
 
-from hero_detector import HeroDetector
-from red_team import RedTeam
-from blue_team import BlueTeam
+from src.models.hero_detector import HeroDetector
+from src.models.red_team import RedTeam
+from src.models.blue_team import BlueTeam
 
 class TeamDetector:
-  heroes = ['ana','ashe', 'baptiste','bastion','brigitte','doomfist', 'dva', 'genji', 'hammond','hanzo', 'junkrat', 'lucio',
-            'mccree', 'mei', 'mercy','moira','orisa', 'pharah', 'reaper', 'reinhardt',
-            'roadhog', 'sigma','soldier76', 'sombra', 'symmetra', 'torbjorn', 'tracer',
+  heroes = ['ana', 'bastion', 'dva', 'genji', 'hanzo', 'junkrat', 'lucio',
+            'mccree', 'mei', 'mercy', 'pharah', 'reaper', 'reinhardt',
+            'roadhog', 'soldier76', 'sombra', 'symmetra', 'torbjorn', 'tracer',
             'widowmaker', 'winston', 'zarya', 'zenyatta', 'unknown']
 
   def __init__(self, original):
@@ -20,29 +20,26 @@ class TeamDetector:
     self.seen_positions = []
 
   # Look in the original image for each Overwatch hero.
-  def detect(self, draw_boxes=True):
-    for hero in reversed(self.__class__.heroes):
+  def detect(self, draw_boxes=False):
+    for hero in self.__class__.heroes:
       self.detect_hero(hero, draw_boxes=draw_boxes)
+
   # Returns an image template for finding the given hero within a larger image.
   def get_hero_template(self, hero):
-    path = os.path.abspath('/Users/theyoungkai/python_projects/overwatch_perfect_flex/champion_selection/templates/' + hero + '.png')
+    path = os.path.abspath('src/templates/' + hero + '.png')
     return cv2.imread(path)
 
   # Look for the given hero in the original image.
-  def detect_hero(self, hero, draw_boxes=True):
+  def detect_hero(self, hero, draw_boxes=False):
     template = self.get_hero_template(hero)
     (height, width) = template.shape[:2]
     points = self.hero_detector.detect(template)
-    # points contains coordinates of tlc in the heros screenshot that strongly correlate to the template chosen for this class instance
+
     if points is None:
-      # this implies no top left coordinates in screenshot match  any pixel in template
       return
 
     valid_points = [point for point in points if self.valid_position(point)]
-    # we loop through all possible templates in case hero is present on both teams
-    #naturally this assumes screenshot is taken in a competitive manner
     for top_left_point in valid_points:
-      # safety net to catch false positives from previous check
       if self.have_seen_position(top_left_point):
         return
 

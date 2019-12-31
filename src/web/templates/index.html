@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block header %}
+  <a class="stats-link is-pulled-right" href="/stats">
+    View stats
+  </a>
+{% endblock %}
+{% block content %}
+  <div class="container has-text-centered content">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <form method="post" class="upload-form" id="screenshot-upload-form" enctype="multipart/form-data">
+          <div class="control has-addons">
+            <input type="file" class="file-input" id="file" name="file">
+            <label for="file" id="file-input-label" class="has-text-centered label is-large is-expanded">
+          Drag your in game screenshot here!    
+            </label>
+            <button type="submit" id="submit-button" class="is-large button is-primary">
+              Upload
+            </button>
+          </div>
+          <span class="help">You can drag and drop a screenshot.</span>
+          <span class="help is-danger" id="file-type-warning" style="display: none">
+            Choose a .jpg, .jpeg, .png, or .gif
+          </span>
+        </form>
+      </div>
+    </div>
+    <div id="sample-screenshot-container" class="sample-screenshot-container">
+      <p>
+        Upload a screenshot like one of these:<br>
+        <button type="button" class="button is-link" id="prev-screenshot-button" style="display: none">
+          <span class="icon is-small">
+            <span class="octicon octicon-chevron-left"></span>
+          </span>
+          Previous
+        </button>
+        <button type="button" class="button is-link" id="next-screenshot-button">
+          Next
+          <span class="icon is-small">
+            <span class="octicon octicon-chevron-right"></span>
+          </span>
+        </button>
+      </p>
+      <div id="sample-screenshots">
+        <img class="active screenshot sample-screenshot" src="{{ url_for('static', filename='sample-screenshot.jpg') }}" alt="Sample screenshot">
+        <img class="screenshot sample-screenshot" style="display: none" src="{{ url_for('static', filename='sample-cards-screen.jpg') }}" alt="Sample game over screenshot">
+        <img class="screenshot sample-screenshot" style="display: none" src="{{ url_for('static', filename='sample-screenshot2.jpg') }}" alt="Sample hero selection screenshot">
+      </div>
+    </div>
+    <div id="screenshot-preview-container" style="display: none">
+      <p>Your screenshot:</p>
+      <img src="" class="screenshot" id="screenshot-preview" alt="">
+    </div>
+  </div>
+{% endblock %}
+{% block script %}
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}

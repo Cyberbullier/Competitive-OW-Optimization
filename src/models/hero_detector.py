@@ -9,9 +9,7 @@ TARGET_WIDTH = 2560
 
 class HeroDetector:
   def __init__(self, original, is_cards_screen=False):
-    #colour conversion, second arg is flag for type of colour conversion, returns modified image
     self.original = cv2.cvtColor(original, cv2.COLOR_BGR2GRAY)
-    #shape method returns images rows,cols and if not greyscale, # of channels
     (self.original_h, self.original_w) = self.original.shape[:2]
     self.threshold = 0.8
     self.is_cards_screen = False
@@ -19,11 +17,9 @@ class HeroDetector:
     self.resized_h = self.original_h
 
     if self.original_w != TARGET_WIDTH:
-      #resizes images dimensions
       self.original = imutils.resize(self.original, width=TARGET_WIDTH)
-      # gets the rows, which is height, and cols, which is width, for the image
       (self.resized_h, self.resized_w) = self.original.shape[:2]
-    #get middle row? why
+
     self.mid_height = int(self.resized_h / 2.0)
 
     # Now can detect if we're on the game-over screen with voting cards, since
@@ -41,13 +37,13 @@ class HeroDetector:
       template = self.scale_template_for_cards_screen(template)
 
     result = cv2.matchTemplate(self.original, template, cv2.TM_CCOEFF_NORMED)
-	#coordinates where the correlation with original image was high
     loc = np.where(result >= self.threshold)
     points = zip(*loc[::-1])
     res = 0
-    lol = copy.deepcopy(points)
+    lol = copy.deepcopy(points) 
     for _ in lol:
       res+=1
+
     if res > 0:
       return HeroDetector.combine_points(points)
 
@@ -69,7 +65,6 @@ class HeroDetector:
   # must be detecting the same hero.
   @classmethod
   def combine_points(cls, points):
-    #need to round matching points sig figs
     rounded_points = [(cls.round(point[0]), cls.round(point[1])) for point in points]
     unique_points = list(set(rounded_points))
 
@@ -89,11 +84,8 @@ class HeroDetector:
     result = []
 
     for point in points:
-      similar_points= []
-      for p in points:
-        if p!=point and filterer(p,point):
-          similar_points.append(p)
-      # similar_points = filter(lambda p: p != point and filterer(p, point), points)
+      similar_points = filter(lambda p: p != point and filterer(p, point), points)
+
       if len(similar_points) < 1:
         result.append(point)
         continue
@@ -111,7 +103,7 @@ class HeroDetector:
   # Returns True if the screenshot is of the game-over screen where hero cards
   # are shown.
   def detect_if_cards_screen(self):
-    path = os.path.abspath('/Users/theyoungkai/python_projects/overwatch_perfect_flex/champion_selection/templates/rate-match.png')
+    path = os.path.abspath('src/templates/rate-match.png')
     template = cv2.imread(path)
     points = self.detect(template)
     return points is not None
@@ -121,4 +113,3 @@ class HeroDetector:
   @classmethod
   def round(cls, num):
     return int(math.floor(num / 20.0)) * 20
-

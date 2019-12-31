@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}Hero Suggestion - {% endblock %}
+{% block back_text %}&larr; {% endblock %}
+{% block header %}
+  <a class="stats-link is-pulled-right" href="/stats">
+    View stats
+  </a>
+{% endblock %}
+{% block page_title %}/ <span class="page-title">Bad Upload</span>{% endblock %}
+{% block content %}
+  <div class="container content has-text-centered">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <h1>
+          Hmm, the file you uploaded doesn't seem
+          to be the right kind of screenshot.
+        </h1>
+        <ul class="upload-tips-list">
+          <li>
+            <span class="octicon octicon-x red-text"></span>
+            Photos of your TV won't work, console players. :(
+          </li>
+          <li>
+            <span class="octicon octicon-x red-text"></span>
+            Old screenshots with the player level in black won't work.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-half">
+        <ul class="upload-tips-list">
+          <li>
+            <span class="octicon octicon-check green-text"></span>
+            Screenshots while the game is going on are okay:
+            <img class="sample-screenshot" src="{{ url_for('static', filename='sample-screenshot.jpg') }}" alt="Sample screenshot">
+          </li>
+        </ul>
+      </div>
+      <div class="column is-half">
+        <ul class="upload-tips-list">
+          <li>
+            <span class="octicon octicon-check green-text"></span>
+            The game-over screen with voting cards is okay:
+            <img class="sample-screenshot" src="{{ url_for('static', filename='sample-cards-screen.jpg') }}" alt="Sample game over screenshot">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
