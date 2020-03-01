@@ -7,7 +7,7 @@ cache:
   directories:
     - "$HOME/.cache/pip"
 python:
-  - 3.7
+  - 2.7
 virtualenv:
   system_site_packages: true
 before_install:
