@@ -12,7 +12,9 @@ Save the following screenshot and upload the image where prompted on the homepag
 
 
 ## Future Plans?
-
-I plan on introducing heuristics of different states of the game ie, different maps. A bit ambitious, but I eventually want to get to a point where I'm able to interact with Blizzard's API to scrape concurrent win rates for each ELO, processing both unstructured and structured data.
+ Markup : * Add support for newer champions (eg. Ashe, Doomfist, Echo, etc...)
+             
+          * I plan on introducing heuristics of different states of the game ie, different maps. A bit ambitious, but I eventually want to get to a point where I'm able to interact with Blizzard's API to scrape concurrent win rates for each ELO, processing both unstructured and structured data.
+ 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
