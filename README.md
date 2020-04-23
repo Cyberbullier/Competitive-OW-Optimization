@@ -11,9 +11,9 @@ Save the following screenshot and upload the image where prompted on the homepag
 ![demo screenshot](https://i.imgur.com/YNuQTUq.jpg)
 
 ## Future Plans?
-- [ ] demp currently only supports champions pre sombra release(inclusive). Add support for newer champions(echo, ashe, doom,hammond, orisa, moira,brig,baptiste)
+- [ ] Demo currently only supports champions pre sombra release(inclusive). Add support for newer champions(echo, ashe, doom,hammond, orisa, moira,brig,baptiste)
     
-- [ ] I plan on introducing heuristics of different states of the game ie, different maps. A bit ambitious, but I eventually want to get to a point where I'm able to interact with Blizzard's API to scrape concurrent win rates for each ELO, processing both unstructured and structured data.
+- [ ] Introduce heuristics of different states of the game ie, different maps. A bit ambitious, but I eventually want to get to a point where I'm able to interact with Blizzard's API to scrape concurrent win rates for each ELO, processing both unstructured and structured data.
  
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
